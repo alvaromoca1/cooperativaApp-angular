@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductoresService } from 'src/app/services/productores.service';
+import { Productor } from 'src/app/interfaces/productor';
 
 @Component({
   selector: 'app-productor-index',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductorIndexComponent implements OnInit {
 
-  constructor() { }
+  productores: Productor[];
+  constructor(productoresService: ProductoresService) {
+    productoresService.getAllproductores().subscribe((data: Productor[])=>{this.productores=data});
+   }
 
   ngOnInit() {
   }

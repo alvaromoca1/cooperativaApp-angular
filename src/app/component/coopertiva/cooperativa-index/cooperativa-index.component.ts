@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CooperativasService } from 'src/app/services/cooperativas.service';
+import { Cooperativa } from 'src/app/interfaces/cooperativa';
 
 @Component({
   selector: 'app-cooperativa-index',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CooperativaIndexComponent implements OnInit {
 
-  constructor() { }
+  cooperativa: Cooperativa[];
+  constructor( cooperativasService: CooperativasService) {
+    //this.datas = cooperativasService.TestMethod();
+    cooperativasService.getAllcoperativas().subscribe((data: Cooperativa[])=>{this.cooperativa=data});
+    
+   }
 
   ngOnInit() {
   }

@@ -21,19 +21,12 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
+                  <tr *ngFor="let cooperativa of cooperativa">
+                    <th scope="row"></th>
+                    <td>{{cooperativa.nombre}}</td>
+                    <td>{{ cooperativa.fecha }}</td>
+                    <td>{{ cooperativa.id_pro_lider }}</td>
                     <td>@mdo</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
                   </tr>
                 </tbody>
               </table>
