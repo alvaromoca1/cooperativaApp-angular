@@ -1,3 +1,4 @@
+
 export interface Cooperativa {
     id?:number;
     nombre:string;

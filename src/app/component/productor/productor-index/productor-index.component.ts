@@ -11,7 +11,7 @@ export class ProductorIndexComponent implements OnInit {
 
   productores: Productor[];
   constructor(productoresService: ProductoresService) {
-    productoresService.getAllproductores().subscribe((data: Productor[])=>{this.productores=data});
+    productoresService.getAllproductores().subscribe((data: Productor[])=>{this.productores = data });
    }
 
   ngOnInit() {

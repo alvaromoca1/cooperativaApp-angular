@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
+import { FormsModule }   from '@angular/forms';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { ReporteComponent } from './component/reporte/reporte.component';
 import { CooperativaIndexComponent } from './component/coopertiva/cooperativa-index/cooperativa-index.component';
@@ -28,6 +29,7 @@ import { ProductorEditComponent } from './component/productor/productor-edit/pro
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [],

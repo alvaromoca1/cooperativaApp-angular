@@ -1,1 +1,25 @@
-<p>cooperativa-form works!</p>
+<div class="container-fluid mt-5">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-between">
+                <h3 class="breadcrumb-item active" aria-current="page">Agregar nueva cooperativa</h3>
+            </ol>
+        </nav>
+        <form class="form-cooperativo" #formcooperativo="ngForm" (ngSubmit)="onSavecooperativa(formcooperativo)">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Nombre</label>
+              <input type="text" name="nombre" class="form-control" ngModel required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Fecha</label>
+                <input type="text" name="fecha" class="form-control" ngModel required>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Productor lider</label>
+                <input type="text" name="id_pro_lider" class="form-control"ngModel>
+              </div>
+            <button type="submit" class="btn btn-primary">Agregar</button>
+            <button [routerLink]="['/cooperativo']" type="submit" class="btn btn-secondary ml-3">Cancelar</button>
+          </form>
+    </div>
+</div>
