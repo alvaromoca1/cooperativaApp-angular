@@ -3,6 +3,8 @@ import { CooperativasService } from 'src/app/services/cooperativas.service';
 import { Cooperativa } from 'src/app/interfaces/cooperativa';
 import {FormsModule, NgForm} from '@angular/forms';
 import {Location} from '@angular/common';
+import { ProductoresService } from 'src/app/services/productores.service';
+import { Productor } from 'src/app/interfaces/productor';
 
 @Component({
   selector: 'app-cooperativa-form',
@@ -10,8 +12,12 @@ import {Location} from '@angular/common';
   styleUrls: ['./cooperativa-form.component.css']
 })
 export class CooperativaFormComponent implements OnInit {
+  
+  productores: Productor[];
+  constructor(private cooperativasService: CooperativasService, private location:Location, productoresService: ProductoresService) { 
+    productoresService.getAllproductores().subscribe((data: Productor[])=>{this.productores = data });
 
-  constructor(private cooperativasService: CooperativasService, private location:Location) { }
+  }
 
   ngOnInit() {
   }

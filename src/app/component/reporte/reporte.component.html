@@ -6,28 +6,31 @@
                 <h3 class="breadcrumb-item active" aria-current="page">Reporte</h3>
             </ol>
         </nav>
-        <div *ngFor="let cooperativa of cooperativa">
-            <h5 class="mt-5">cooperartiva {{ cooperativa.nombre }}</h5>
-            <div>
-                <table class="table table-hover">
-                    <thead>
-                      <tr>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Direccion</th>
-                        <th scope="col">DNI</th>
-                        <th scope="col">Accion</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr *ngFor="let productor of productores">
-                            <td *ngIf="cooperativa.id == productor.id_cooperativa">{{ productor.nombre }} {{ productor.apellido }}</td>
-                            <td *ngIf="cooperativa.id == productor.id_cooperativa">{{ productor.direccion }}</td>
-                            <td *ngIf="cooperativa.id == productor.id_cooperativa">{{ productor.dni }}</td>
-                            <td *ngIf="cooperativa.id == productor.id_cooperativa">@mdo</td>
-                      </tr>
-                    </tbody>
-                  </table>
-            </div>
+        <div class="card mt-5" *ngFor="let cooperativa of cooperativa">
+          <div class="card-header">
+            cooperartiva <strong>{{ cooperativa.nombre }}</strong>
+          </div>
+          <div class="card-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Direccion</th>
+                  <th scope="col">DNI</th>
+                  <th scope="col">Accion</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let productor of productores">
+                    <td *ngIf="cooperativa.id == productor.id_cooperativa">{{ productor.nombre }} {{ productor.apellido }}</td>
+                    <td *ngIf="cooperativa.id == productor.id_cooperativa">{{ productor.direccion }}</td>
+                    <td *ngIf="cooperativa.id == productor.id_cooperativa">{{ productor.dni }}</td>
+                    <td *ngIf="cooperativa.id == productor.id_cooperativa">@mdo</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+
     </div>
 </div>
